@@ -9,6 +9,11 @@ import CTA from './components/CTA';
 import Company from './components/Company';
 import Footer from './components/Footer';
 import BookDemo from './components/BookDemo';
+import AIProjectScores from './pages/AIProjectScores';
+import AIProjectSummary from './pages/AIProjectSummary';
+import AIChat from './pages/AIChat';
+import ActionItems from './pages/ActionItems';
+import NoteTakerAgent from './pages/NoteTakerAgent';
 
 function App() {
   const [currentView, setCurrentView] = useState('home');
@@ -21,15 +26,42 @@ function App() {
     }, 100);
   };
 
+  const navigateToPage = (page) => {
+    setCurrentView(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Render different pages based on current view
   if (currentView === 'book-demo') {
     return <BookDemo onBack={navigateHome} />;
+  }
+
+  if (currentView === 'ai-scores') {
+    return <AIProjectScores onBack={navigateHome} />;
+  }
+
+  if (currentView === 'ai-summary') {
+    return <AIProjectSummary onBack={navigateHome} />;
+  }
+
+  if (currentView === 'ai-chat') {
+    return <AIChat onBack={navigateHome} />;
+  }
+
+  if (currentView === 'action-items') {
+    return <ActionItems onBack={navigateHome} />;
+  }
+
+  if (currentView === 'note-taker') {
+    return <NoteTakerAgent onBack={navigateHome} />;
   }
 
   return (
     <div className="min-h-screen">
       <Navbar 
         onBookDemo={() => setCurrentView('book-demo')} 
-        onNavigateHome={navigateHome} 
+        onNavigateHome={navigateHome}
+        onNavigateToPage={navigateToPage}
       />
       <Hero onBookDemo={() => setCurrentView('book-demo')} />
       <Features />

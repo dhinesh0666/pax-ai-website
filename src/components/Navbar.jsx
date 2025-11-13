@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
 
-const Navbar = ({ onBookDemo, onNavigateHome }) => {
+const Navbar = ({ onBookDemo, onNavigateHome, onNavigateToPage }) => {
   const [scrolled, setScrolled] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [platformOpen, setPlatformOpen] = useState(false);
@@ -91,11 +91,11 @@ const Navbar = ({ onBookDemo, onNavigateHome }) => {
                     transition={{ duration: 0.2 }}
                     className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 border border-gray-100"
                   >
-                    <a href="#ai-scores" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">AI Project Scores</a>
-                    <a href="#ai-summary" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">AI Project/People Summary</a>
-                    <a href="#ai-chat" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">AI Chat</a>
-                    <a href="#action-items" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Action Items Recommendations</a>
-                    <a href="#note-taker" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Context Aware Note Taker Agent</a>
+                    <button onClick={() => onNavigateToPage('ai-scores')} className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">AI Project Scores</button>
+                    <button onClick={() => onNavigateToPage('ai-summary')} className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">AI Project/People Summary</button>
+                    <button onClick={() => onNavigateToPage('ai-chat')} className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">AI Chat</button>
+                    <button onClick={() => onNavigateToPage('action-items')} className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Action Items Recommendations</button>
+                    <button onClick={() => onNavigateToPage('note-taker')} className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Context Aware Note Taker Agent</button>
                     <a href="#integrations" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Connectors</a>
                   </motion.div>
                 )}
