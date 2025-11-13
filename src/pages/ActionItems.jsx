@@ -27,7 +27,7 @@ const ActionItems = ({ onBack }) => {
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 mb-6 text-white">
             <FaTasks className="text-4xl" />
           </div>
-          <h1 className="text-5xl font-bold mb-6">Action Items Recommendations</h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Action Items Recommendations</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Never miss important follow-ups again. AI automatically identifies and prioritizes 
             action items from meetings, conversations, and project updates.

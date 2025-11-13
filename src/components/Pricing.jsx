@@ -69,7 +69,7 @@ const Pricing = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">
             Simple, Transparent
             <span className="text-gradient"> Pricing</span>
           </h2>
@@ -102,7 +102,7 @@ const Pricing = () => {
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                 <p className="text-gray-600 mb-4">{plan.description}</p>
                 <div className="mb-2">
-                  <span className="text-5xl font-bold">{plan.price}</span>
+                  <span className="text-3xl sm:text-4xl lg:text-5xl font-bold">{plan.price}</span>
                   {plan.price !== 'Custom' && <span className="text-gray-600">/{plan.period.split('/')[1]}</span>}
                 </div>
                 <p className="text-gray-500 text-sm">{plan.period}</p>

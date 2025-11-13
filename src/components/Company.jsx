@@ -12,7 +12,7 @@ const Company = ({ onBookDemo }) => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">
             About <span className="text-gradient">PAXI.AI</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

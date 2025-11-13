@@ -27,7 +27,7 @@ const AIChat = ({ onBack }) => {
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-green-500 to-blue-500 mb-6 text-white">
             <FaComments className="text-4xl" />
           </div>
-          <h1 className="text-5xl font-bold mb-6">AI Chat Assistant</h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">AI Chat Assistant</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Ask questions about your projects, team, and data in natural language. 
             Get instant, intelligent answers powered by context-aware AI.

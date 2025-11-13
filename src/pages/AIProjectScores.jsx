@@ -27,7 +27,7 @@ const AIProjectScores = ({ onBack }) => {
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 mb-6 text-white">
             <FaChartLine className="text-4xl" />
           </div>
-          <h1 className="text-5xl font-bold mb-6">AI Project Scores</h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">AI Project Scores</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Get instant, AI-powered health scores for all your projects. Our intelligent scoring system 
             analyzes multiple data points to give you a comprehensive view of project performance.

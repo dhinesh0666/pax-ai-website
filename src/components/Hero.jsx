@@ -21,12 +21,12 @@ const Hero = ({ onBookDemo }) => {
               🚀 Executive Management Intelligence Platform
             </motion.div>
             
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
               Unified Performance & Sentiment Metrics
               <span className="text-gradient"> Across Your Enterprise</span>
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
               PAXI.AI unifies data from multiple enterprise platforms to deliver comprehensive 
               performance and sentiment metrics across projects and people. Get AI-powered 
               actionable insights that improve efficiency, performance, and decision-making 

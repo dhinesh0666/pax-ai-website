@@ -28,15 +28,15 @@ const NoteTakerAgent = ({ onBack }) => {
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 mb-6 text-white">
             <FaMicrophone className="text-4xl" />
           </div>
-          <h1 className="text-5xl font-bold mb-6">Context Aware Note Taker Agent</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Context Aware Note Taker Agent</h1>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Never miss important details again. Our AI agent automatically captures, 
             organizes, and contextualizes meeting notes, action items, and decisions.
           </p>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,14 +90,14 @@ const NoteTakerAgent = ({ onBack }) => {
           transition={{ delay: 0.4 }}
           className="bg-white rounded-3xl shadow-xl p-8 lg:p-12 mb-16"
         >
-          <h2 className="text-3xl font-bold text-center mb-8">Sample AI-Generated Meeting Notes</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Sample AI-Generated Meeting Notes</h2>
           
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Meeting Header */}
             <div className="lg:col-span-2 bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6 mb-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-800">Sprint Planning - Mobile App Team</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-800">Sprint Planning - Mobile App Team</h3>
                   <p className="text-gray-600 mt-1">November 13, 2024 • 2:00 PM - 3:30 PM</p>
                 </div>
                 <div className="text-right">
@@ -209,9 +209,9 @@ const NoteTakerAgent = ({ onBack }) => {
           transition={{ delay: 0.5 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold text-center mb-12">How the AI Note Taker Works</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">How the AI Note Taker Works</h2>
           
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
                 🎤
@@ -261,9 +261,9 @@ const NoteTakerAgent = ({ onBack }) => {
           transition={{ delay: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold text-center mb-8">Works With Your Meeting Tools</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">Works With Your Meeting Tools</h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -319,7 +319,7 @@ const NoteTakerAgent = ({ onBack }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="grid md:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16"
         >
           <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
             <div className="text-4xl mb-4">⏰</div>
@@ -353,8 +353,8 @@ const NoteTakerAgent = ({ onBack }) => {
           transition={{ delay: 0.8 }}
           className="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-3xl p-12 text-white text-center"
         >
-          <h2 className="text-3xl font-bold mb-4">Never Take Manual Notes Again</h2>
-          <p className="text-xl mb-8 opacity-90">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Never Take Manual Notes Again</h2>
+          <p className="text-lg sm:text-xl mb-8 opacity-90">
             Let AI handle the documentation while you focus on the conversation
           </p>
           <button className="bg-white text-indigo-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition transform hover:scale-105">
