@@ -1,0 +1,140 @@
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaChevronDown } from 'react-icons/fa';
+import BookDemoModal from './BookDemoModal';
+
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [platformOpen, setPlatformOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [showDemoModal, setShowDemoModal] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-white/80 backdrop-blur-md'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex items-center">
+            <a href="/" className="text-2xl font-bold text-gradient">PAXI.AI</a>
+          </div>
+          
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="/" className="text-gray-700 hover:text-blue-600 transition font-medium">Home</a>
+            
+            {/* Solutions Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setSolutionsOpen(true)}
+              onMouseLeave={() => setSolutionsOpen(false)}
+            >
+              <button className="flex items-center text-gray-700 hover:text-blue-600 transition font-medium">
+                Solutions <FaChevronDown className={`ml-1 text-xs transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <AnimatePresence>
+                {solutionsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 border border-gray-100"
+                  >
+                    <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">By Role</div>
+                    <a href="#executive" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Executive</a>
+                    <a href="#engineering-manager" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Engineering Manager</a>
+                    <a href="#project-manager" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Project Manager</a>
+                    <a href="#vendor-contractor" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Vendor/Contractor</a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Platform Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setPlatformOpen(true)}
+              onMouseLeave={() => setPlatformOpen(false)}
+            >
+              <button className="flex items-center text-gray-700 hover:text-blue-600 transition font-medium">
+                Platform <FaChevronDown className={`ml-1 text-xs transition-transform ${platformOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <AnimatePresence>
+                {platformOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 border border-gray-100"
+                  >
+                    <a href="#ai-scores" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">AI Project Scores</a>
+                    <a href="#ai-summary" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">AI Project/People Summary</a>
+                    <a href="#ai-chat" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">AI Chat</a>
+                    <a href="#action-items" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Action Items Recommendations</a>
+                    <a href="#note-taker" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Context Aware Note Taker Agent</a>
+                    <a href="#integrations" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Connectors</a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* About Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setAboutOpen(true)}
+              onMouseLeave={() => setAboutOpen(false)}
+            >
+              <button className="flex items-center text-gray-700 hover:text-blue-600 transition font-medium">
+                About <FaChevronDown className={`ml-1 text-xs transition-transform ${aboutOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <AnimatePresence>
+                {aboutOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-2 border border-gray-100"
+                  >
+                    <a href="#company" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">Company</a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+          
+          <div className="flex items-center space-x-4">
+            <button 
+              onClick={() => setShowDemoModal(true)}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition transform hover:scale-105 font-semibold"
+            >
+              Book A Demo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Book Demo Modal */}
+      <BookDemoModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
+    </motion.nav>
+  );
+};
+
+export default Navbar;
