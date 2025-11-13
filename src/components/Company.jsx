@@ -1,10 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaRocket, FaUsers, FaChartLine, FaMapMarkerAlt } from 'react-icons/fa';
-import { useState } from 'react';
-import BookDemoModal from './BookDemoModal';
 
-const Company = () => {
-  const [showDemoModal, setShowDemoModal] = useState(false);
+const Company = ({ onBookDemo }) => {
 
   return (
     <section id="company" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
@@ -92,16 +89,13 @@ const Company = () => {
             your team's project management.
           </p>
           <button 
-            onClick={() => setShowDemoModal(true)}
+            onClick={onBookDemo}
             className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition transform hover:scale-105"
           >
             Book A Demo
           </button>
         </motion.div>
       </div>
-
-      {/* Book Demo Modal */}
-      <BookDemoModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
     </section>
   );
 };

@@ -1,14 +1,22 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
-import BookDemoModal from './BookDemoModal';
 
-const Navbar = () => {
+const Navbar = ({ onBookDemo, onNavigateHome }) => {
   const [scrolled, setScrolled] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [platformOpen, setPlatformOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-  const [showDemoModal, setShowDemoModal] = useState(false);
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (onNavigateHome) {
+      onNavigateHome();
+    } else {
+      // Fallback: scroll to top if no navigation handler
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,11 +37,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-gradient">PAXI.AI</a>
+            <button onClick={handleLogoClick} className="text-2xl font-bold text-gradient cursor-pointer">PAXI.AI</button>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-gray-700 hover:text-blue-600 transition font-medium">Home</a>
+            <button onClick={handleLogoClick} className="text-gray-700 hover:text-blue-600 transition font-medium">Home</button>
             
             {/* Solutions Dropdown */}
             <div 
@@ -122,7 +130,7 @@ const Navbar = () => {
           
           <div className="flex items-center space-x-4">
             <button 
-              onClick={() => setShowDemoModal(true)}
+              onClick={onBookDemo}
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition transform hover:scale-105 font-semibold"
             >
               Book A Demo
@@ -130,9 +138,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-      {/* Book Demo Modal */}
-      <BookDemoModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
     </motion.nav>
   );
 };

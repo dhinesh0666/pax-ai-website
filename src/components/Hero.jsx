@@ -1,10 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaRocket, FaChartLine, FaBrain } from 'react-icons/fa';
-import { useState } from 'react';
-import BookDemoModal from './BookDemoModal';
 
-const Hero = () => {
-  const [showDemoModal, setShowDemoModal] = useState(false);
+const Hero = ({ onBookDemo }) => {
 
   return (
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -38,13 +35,13 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <button 
-                onClick={() => setShowDemoModal(true)}
+                onClick={onBookDemo}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition transform hover:scale-105"
               >
                 Start Free Trial
               </button>
               <button 
-                onClick={() => setShowDemoModal(true)}
+                onClick={onBookDemo}
                 className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition"
               >
                 Watch Demo
@@ -125,8 +122,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Book Demo Modal */}
-      <BookDemoModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
+
     </section>
   );
 };
